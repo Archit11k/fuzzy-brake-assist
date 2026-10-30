@@ -270,6 +270,25 @@ fuzzy-brake-assist/
 3. S. Russell & P. Norvig, *Artificial Intelligence: A Modern Approach*, 4th Ed.
 4. T. J. Ross, *Fuzzy Logic with Engineering Applications*, Wiley.
 
+## 👥 Contributors
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Archit11k">
+        <img src="https://github.com/Archit11k.png" width="100px;" alt="Archit Singh" style="border-radius:50%"/><br />
+        <sub><b>Archit Singh</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Tirthraj-Chauhan">
+        <img src="https://github.com/Tirthraj-Chauhan.png" width="100px;" alt="Tirthraj Chauhan" style="border-radius:50%"/><br />
+        <sub><b>Tirthraj Chauhan</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
