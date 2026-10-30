@@ -1,0 +1,8 @@
+Scenario                     Collision  Min gap(m)  Peak dec  RMS jerk  Jumps>20%
+---------------------------------------------------------------------------------
+Fuzzy  | Alert driver (0.5)         no        5.01      6.71      1.73          0
+Crisp  | Alert driver (0.5)        YES        0.00      8.98      4.82          2
+Fuzzy  | Drowsy driver (5)          no       13.24      6.62      2.21          1
+Crisp  | Drowsy driver (5)         YES        0.00      8.98      4.82          2
+Fuzzy  | Sleepy driver (9)          no       45.00      2.75      1.04          0
+Crisp  | Sleepy driver (9)         YES        0.00      9.00      6.12          1

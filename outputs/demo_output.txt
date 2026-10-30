@@ -1,0 +1,44 @@
+======================================================================
+ FUZZY BRAKING ASSIST  |  speed=70 km/h   gap=18 m   drowsiness=6
+======================================================================
+
+STEP 1 - FUZZIFICATION (crisp -> membership degrees)
+  speed      : Slow=0.00   Medium=0.67   Fast=0.00
+  distance   : Near=0.17   Medium=0.53   Far=0.00
+  drowsiness : Alert=0.00   Drowsy=0.67   Sleepy=0.00
+
+STEP 2 - RULE EVALUATION (AND = min)  - only rules that fire:
+  α=0.17  IF speed is Medium AND distance is Near AND drowsiness is Drowsy THEN brake is Emergency
+  α=0.53  IF speed is Medium AND distance is Medium AND drowsiness is Drowsy THEN brake is Hard
+
+STEP 3 - IMPLICATION (clip each output set at α, Mamdani min)
+STEP 4 - AGGREGATION (max of all clipped sets)
+  aggregated set peak height = 0.53
+
+STEP 5 - DEFUZZIFICATION
+  Centroid (COG)   :  76.44 %   <- used by the system
+  Bisector         :  76.00 %
+  Mean of Maximum  :  75.00 %
+
+  >>> FUZZY BRAKE = 76.4 %     (crisp if-else would give 75 %)
+======================================================================
+
+SIMULATION - lead car brakes hard at t=4 s (80 -> 10 km/h), start gap 45 m
+
+Scenario                     Collision  Min gap(m)  Peak dec  RMS jerk  Jumps>20%
+---------------------------------------------------------------------------------
+Fuzzy  | Alert driver (0.5)         no        5.01      6.71      1.73          0
+Crisp  | Alert driver (0.5)        YES        0.00      8.98      4.82          2
+Fuzzy  | Drowsy driver (5)          no       13.24      6.62      2.21          1
+Crisp  | Drowsy driver (5)         YES        0.00      8.98      4.82          2
+Fuzzy  | Sleepy driver (9)          no       45.00      2.75      1.04          0
+Crisp  | Sleepy driver (9)         YES        0.00      9.00      6.12          1
+
+Generating figures ...
+  saved /home/claude/fuzzy_brake_assist/outputs/1_membership_functions.png
+  saved /home/claude/fuzzy_brake_assist/outputs/2_worked_example.png
+  saved /home/claude/fuzzy_brake_assist/outputs/3_control_surfaces.png
+  saved /home/claude/fuzzy_brake_assist/outputs/4_fuzzy_vs_crisp_curve.png
+  saved /home/claude/fuzzy_brake_assist/outputs/5_rule_base.png
+  saved /home/claude/fuzzy_brake_assist/outputs/6_simulation.png
+  saved /home/claude/fuzzy_brake_assist/outputs/7_drowsiness_and_defuzz.png
