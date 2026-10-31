@@ -231,7 +231,7 @@ fuzzy-brake-assist/
 │   ├── 7_drowsiness_and_defuzz.png
 │   ├── demo_output.txt
 │   └── metrics.txt
-└── VIVA.md                # 🎤 34 Q&A for viva preparation
+
 ```
 
 ## 🛠️ Technical Details
